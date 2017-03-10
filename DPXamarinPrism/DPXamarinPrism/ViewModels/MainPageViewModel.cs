@@ -19,6 +19,7 @@ namespace DPXamarinPrism.ViewModels
         public MainPageViewModel()
         {
 
+
         }
 
         public void OnNavigatedFrom(NavigationParameters parameters)
