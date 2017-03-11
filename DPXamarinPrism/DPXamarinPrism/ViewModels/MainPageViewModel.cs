@@ -10,6 +10,7 @@ namespace DPXamarinPrism.ViewModels
     public class MainPageViewModel : BindableBase, INavigationAware
     {
         private string _title;
+
         public string Title
         {
             get { return _title; }
