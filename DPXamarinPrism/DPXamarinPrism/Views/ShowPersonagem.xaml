@@ -7,7 +7,7 @@
              x:Class="DPXamarinPrism.Views.ShowPersonagem"
              Title="ShowPersonagem">
 
-    <Label Text="{Binding Path=Nome}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+    <Label Text="{Binding Path=title}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
            FontSize="28" />
 
 </ContentPage>

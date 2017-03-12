@@ -11,9 +11,9 @@ namespace DPXamarinPrism.ViewModels
     public class DetailsPersonagemViewModel : BindableBase, INavigationAware
     {
         private readonly ITsApiService _tsApiService;
-        private Personagem _selectedComic;
+        private Comic _selectedComic;
 
-        public Personagem SelectedComic
+        public Comic SelectedComic
         {
             get { return _selectedComic; }
             set { SetProperty(ref _selectedComic, value); }

@@ -56,6 +56,7 @@ namespace DPXamarin.Core.Services
                         var message = error != null ? error.Message : "";
                         throw new ComicSeriesApiException(message, response.StatusCode);
                     }
+
                     return await response.Content.ReadAsAsync<T>();
                 }
                 catch (HttpRequestException ex)

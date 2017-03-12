@@ -14,9 +14,9 @@ namespace DPXamarinPrism.ViewModels
     {
         private readonly ITsApiService _tsApiService;
         private readonly INavigationService _navigationService;
-        private ObservableCollection<Personagem> _listComics;
+        private ObservableCollection<Comic> _listComics;
 
-        public ObservableCollection<Personagem> ListComics
+        public ObservableCollection<Comic> ListComics
         {
             get { return _listComics; }
             set { SetProperty(ref _listComics, value); }
@@ -36,7 +36,7 @@ namespace DPXamarinPrism.ViewModels
         public async void OnNavigatedTo(NavigationParameters parameters)
         {
             var comics = await _tsApiService.GetComics();
-            ListComics = new ObservableCollection<Personagem>(comics);
+            ListComics = new ObservableCollection<Comic>(comics);
         }
 
         private DelegateCommand<ItemTappedEventArgs> _goToDetailPage;
@@ -50,8 +50,8 @@ namespace DPXamarinPrism.ViewModels
                     _goToDetailPage = new DelegateCommand<ItemTappedEventArgs>(async selected =>
                     {
                         NavigationParameters param = new NavigationParameters();
-                        var comic = selected.Item as Personagem;
-                        param.Add("comic",  comic.Id);
+                        var comic = selected.Item as Comic;
+                        param.Add("comic",  comic.id);
                         await _navigationService.NavigateAsync("DetailPersonagem", param);
                     });
                 }

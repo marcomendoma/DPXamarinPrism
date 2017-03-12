@@ -7,7 +7,7 @@ namespace DPXamarin.Core.Services
 {
     public interface ITsApiService
     {
-        Task<List<Personagem>> GetComics();
-        Task<Personagem> GetComicById(int id);
+        Task<List<Comic>> GetComics();
+        Task<Comic> GetComicById(int id);
     }
 }

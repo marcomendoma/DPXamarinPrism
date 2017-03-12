@@ -1,6 +1,7 @@
 ﻿using Prism.Unity;
 using DPXamarinPrism.Views;
 using DPXamarin.Core.Services;
+using Microsoft.Practices.Unity;
 
 namespace DPXamarinPrism
 {
@@ -8,14 +9,14 @@ namespace DPXamarinPrism
     {
         public App(IPlatformInitializer initializer = null) : base(initializer) { }
 
-        protected override async void OnInitialized()
+        protected override void OnInitialized()
         {
             InitializeComponent();
 
-            await NavigationService.NavigateAsync("ShowPersonagem");
+            NavigationService.NavigateAsync("ShowPersonagem");
         }
 
-        protected override async void RegisterTypes()
+        protected override void RegisterTypes()
         {
             Container.RegisterTypeForNavigation<MainPage>();
             Container.RegisterTypeForNavigation<DetailsPersonagem>();
