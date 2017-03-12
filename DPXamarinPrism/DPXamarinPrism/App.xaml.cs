@@ -1,5 +1,6 @@
 ﻿using Prism.Unity;
 using DPXamarinPrism.Views;
+using DPXamarin.Core.Services;
 
 namespace DPXamarinPrism
 {
@@ -7,16 +8,19 @@ namespace DPXamarinPrism
     {
         public App(IPlatformInitializer initializer = null) : base(initializer) { }
 
-        protected override void OnInitialized()
+        protected override async void OnInitialized()
         {
             InitializeComponent();
 
-            NavigationService.NavigateAsync("MainPage?title=Hello%20from%20Xamarin.Forms");
+            await NavigationService.NavigateAsync("ShowPersonagem");
         }
 
-        protected override void RegisterTypes()
+        protected override async void RegisterTypes()
         {
             Container.RegisterTypeForNavigation<MainPage>();
+            Container.RegisterTypeForNavigation<DetailsPersonagem>();
+            Container.RegisterTypeForNavigation<ShowPersonagem>();
+            Container.RegisterType<ITsApiService, TsApiService>();
         }
     }
 }

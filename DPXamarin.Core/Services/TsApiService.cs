@@ -11,12 +11,12 @@ namespace DPXamarin.Core.Services
             _baseUrl = "http://gateway.marvel.com:80/v1/public/comics?apikey=a2cfff2c08621b9d7a829ca6c4cb0828";
         }
 
-        public Task<List<Personagem>> GetComics()
+        public async Task<List<Personagem>> GetComics()
         {
-            return await Get<List<Personagem>>();
+            return await Get<List<Personagem>>("");
         }
 
-        public Task<Personagem> GetComicById(int id)
+        public async Task<Personagem> GetComicById(int id)
         {
             return await Get<Personagem>($"comics/{id}?apikey=a2cfff2c08621b9d7a829ca6c4cb0828");
         }

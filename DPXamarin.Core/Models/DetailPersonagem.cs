@@ -2,9 +2,9 @@
 
 namespace DPXamarin.Core.Models
 {
-    public class Personagem
+    public class DetailPersonagem
     {
         public int Id { get; set; }
-        public String Nome { get; set; }
+        public String Descricao { get; set; }
     }
 }
